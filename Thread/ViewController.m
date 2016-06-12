@@ -20,7 +20,7 @@ static NSString * const kCellID = @"kCellID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-      self.threadNames = @[@"pthread", @"NSThread", @"GCD", @"ParticleAnimation"];
+      self.threadNames = @[@"pthread", @"NSThread", @"GCD", @"NSOperation"];
 }
 #pragma mark - TableView DataSource && Delegate
 

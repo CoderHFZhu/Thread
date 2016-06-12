@@ -16,6 +16,7 @@
 		14BB54E11D0D1DC9000B7BB4 /* NSThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BB54E01D0D1DC9000B7BB4 /* NSThreadViewController.m */; };
 		14BB54E41D0D2068000B7BB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14BB54E21D0D2068000B7BB4 /* Main.storyboard */; };
 		14BB54E71D0D20B2000B7BB4 /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BB54E61D0D20B2000B7BB4 /* GCDViewController.m */; };
+		14BB54EA1D0D4264000B7BB4 /* NSOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BB54E91D0D4264000B7BB4 /* NSOperationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		14BB54E31D0D2068000B7BB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14BB54E51D0D20B2000B7BB4 /* GCDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDViewController.h; sourceTree = "<group>"; };
 		14BB54E61D0D20B2000B7BB4 /* GCDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDViewController.m; sourceTree = "<group>"; };
+		14BB54E81D0D4264000B7BB4 /* NSOperationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSOperationViewController.h; sourceTree = "<group>"; };
+		14BB54E91D0D4264000B7BB4 /* NSOperationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSOperationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 				14BB54E01D0D1DC9000B7BB4 /* NSThreadViewController.m */,
 				14BB54E51D0D20B2000B7BB4 /* GCDViewController.h */,
 				14BB54E61D0D20B2000B7BB4 /* GCDViewController.m */,
+				14BB54E81D0D4264000B7BB4 /* NSOperationViewController.h */,
+				14BB54E91D0D4264000B7BB4 /* NSOperationViewController.m */,
 				14BB54D11D0D0B80000B7BB4 /* Assets.xcassets */,
 				14BB54D31D0D0B80000B7BB4 /* LaunchScreen.storyboard */,
 				14BB54E21D0D2068000B7BB4 /* Main.storyboard */,
@@ -169,6 +174,7 @@
 				14BB54DE1D0D12DD000B7BB4 /* PthreadViewController.m in Sources */,
 				14BB54CA1D0D0B80000B7BB4 /* AppDelegate.m in Sources */,
 				14BB54C71D0D0B80000B7BB4 /* main.m in Sources */,
+				14BB54EA1D0D4264000B7BB4 /* NSOperationViewController.m in Sources */,
 				14BB54E11D0D1DC9000B7BB4 /* NSThreadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +324,7 @@
 				14BB54DB1D0D0B80000B7BB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
