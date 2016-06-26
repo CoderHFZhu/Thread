@@ -12,6 +12,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (nonatomic, strong) UIImage  *image1; /**< 图片1 */
 @property (nonatomic, strong) UIImage  *image2; /**< 图片2 */
+
+/** 定时器(这里不用带*，因为dispatch_source_t就是个类，内部已经包含了*) */
+@property (nonatomic, strong) dispatch_source_t timer;
 @end
 
 @implementation GCDViewController
@@ -21,7 +24,7 @@
     // Do any additional setup after loading the view.
     
     
-    [self group2];
+    [self GCDTimer];
     
 }
 #pragma mark --- 执行方式，执行队列------
@@ -351,6 +354,45 @@
             NSLog(@"%@--刷新UI",[NSThread currentThread]);
         });
     });
+}
+
+#pragma mark ------  GCD 定时器 --------- 
+-(void)GCDTimer {
+    /** 创建队列*/
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    //1.创建一个GCD定时器(dispatch_source_t本质还是个OC对象)
+    /*
+     第一个参数:表明创建的是一个定时器
+     */
+
+    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    self.timer = timer;
+    /** 设置定时器的开始时间，间隔时间，精准度*/
+    /**  
+     第1个参数:要给哪个定时器设置
+     第2个参数:开始时间
+     第3个参数:间隔时间
+     第4个参数:精准度 一般为0 提高程序的性能
+     */
+    // GCD的时间参数，一般是纳秒（1秒 == 10的9次方纳秒）
+    // 何时开始执行第一个任务
+    // dispatch_time(DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC) 比当前时间晚3秒
+    
+    dispatch_time_t start = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC));
+    NSLog(@"%s,line num = %d \n %@",__func__,__LINE__,@"=============分割线");
+    dispatch_source_set_timer(timer, start, 2.0 * NSEC_PER_SEC, 0);
+
+//    dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 2.0 * NSEC_PER_SEC, 0);
+    
+    dispatch_source_set_event_handler(timer, ^{
+        NSLog(@"%s,line num = %d \n %@",__func__,__LINE__,@"GCDTimer");
+    });
+    
+    //4.启动
+    dispatch_resume(timer);
+    
+    
+    
 }
 
 @end
